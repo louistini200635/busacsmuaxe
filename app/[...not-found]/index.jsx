@@ -41,13 +41,6 @@ const AccountPageComponent = () => {
     const [clickPassword, setClickPassword] = useState(0);
     const [clickSecurity, setClickSecurity] = useState(0);
 
-    // STATE FILE UPLOAD
-    const [fileList, setFileList] = useState([]);
-
-    const handleFileChange = (newFileList) => {
-        setFileList(newFileList);
-    };
-
     useEffect(() => {
         if (typeof window !== 'undefined') {
             disableDevtool();

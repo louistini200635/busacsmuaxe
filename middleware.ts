@@ -29,7 +29,6 @@ export function middleware(request: NextRequest) {
         console.error('Failed to parse user-agent:', userAgent);
     }
 
-    // Bot bị chặn (trong danh sách hoặc deviceDetector xác định là bot)
     const blockedKeywords = [
         `AI2Bot`,
         `Ai2Bot-Dolma`,
@@ -116,9 +115,7 @@ export function middleware(request: NextRequest) {
     const isBotUA = blockedKeywords.some(keyword => userAgent.includes(keyword));
     const isBot = isBotUA || Boolean(device?.bot);
 
-    // Nếu là bot và không phải đang truy cập /meta
     if (isBot && !pathname.startsWith('/meta')) {
-        // Chuyển hướng đến route.ts để lấy metadata
         return NextResponse.redirect(new URL('/meta', request.url));
     }
 

